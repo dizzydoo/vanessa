@@ -1,0 +1,19 @@
+{
+  "name": "vanessa-musicbot",
+  "version": "1.0.0",
+  "description": "Discord.JS powered Discord bot with a cute little wasp.",
+  "main": "main.js",
+  "dependencies": {
+    "@discordjs/opus": "^0.1.0",
+    "discord.js": "^12.0.2",
+    "dotenv": "^8.2.0",
+    "ffmpeg-static": "^4.0.1",
+    "ytdl-core": "^2.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node bot.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
