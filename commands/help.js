@@ -14,7 +14,7 @@ module.exports = {
         if (!args.length) {
 
             data.push('Here\'s a list of all my commands:');
-            data.push(commands.map(command => command.name).join(', '));
+            data.push(commands.map(command => command.name).join(`\n`));
             data.push(`\nYou can send \`${botPrefix}help [command name]\` to get info on a specific command!`);
 
             return message.author.send(data, { split: true })
@@ -24,7 +24,7 @@ module.exports = {
 	            })
                 .catch(error => {
                     console.error(`Could not send help DM to ${message.author.tag}.\n`, error);
-                    message.reply('it seems like I can\'t DM you! Do you have DMs disabled?');
+                    message.reply(`I can\'t seem to DM you my commands :< \nDo you have DMs disabled?`);
                 });
 		}
 		

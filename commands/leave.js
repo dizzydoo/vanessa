@@ -1,6 +1,6 @@
 module.exports = {
-	name: 'stop',
-	description: 'Stops the bot and clears the queue.',
+	name: 'leave',
+	description: 'Stops playback, clears queue and makes the bot leave the channel.',
     guildOnly: true,
 	execute(message) {
 		const { channel } = message.member.voice;
@@ -9,6 +9,6 @@ module.exports = {
 		if (!serverQueue) return message.channel.send('There\'s nothing playing tho.');
 		serverQueue.songs = [];
 		serverQueue.connection.dispatcher.end();
-		message.channel.send(':stop_button: *Queue cleared and song stopped c:*');
+		message.channel.send(':wave: cya later, nerd!');
 	}
 };

@@ -55,7 +55,7 @@ module.exports = {
 				})
 				.on('error', error => console.error(error));
 			dispatcher.setVolumeLogarithmic(queue.volume / 5);
-			queue.textChannel.send(`🎶 Start playing: **${song.title}**`);
+			queue.textChannel.send(`🎶 Now playing: **\`${song.title}\`**`);
 		};
 
 		try {
