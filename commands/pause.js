@@ -9,6 +9,6 @@ module.exports = {
 			serverQueue.connection.dispatcher.pause();
 			return message.channel.send('⏸ Paused!');
 		}
-		return message.channel.send('There is nothing playing.');
+		return message.channel.send(`There's nothing playing tho. 🤷‍♀️`);
 	}
 };

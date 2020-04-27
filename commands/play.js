@@ -10,10 +10,10 @@ module.exports = {
     guildOnly: true,
 	 async execute(message, args) {
         const { channel } = message.member.voice;
-		if (!channel) return message.channel.send('You need to be in a voice channel to play music, silly!');
+		if (!channel) return message.channel.send('🤭 You need to be in a voice channel to play music, silly!');
 		const permissions = channel.permissionsFor(message.client.user);
-		if (!permissions.has('CONNECT')) return message.channel.send('I cannot connect to your voice channel, make sure I have the proper permissions!');
-		if (!permissions.has('SPEAK')) return message.channel.send('I cannot speak in this voice channel, make sure I have the proper permissions!');
+		if (!permissions.has('CONNECT')) return message.channel.send(`😢 I can't connect to your voice channel, check my permissions!`);
+		if (!permissions.has('SPEAK')) return message.channel.send(`😶 I can't speak in this voice channel, check my permissions!`);
 
 		const serverQueue = message.client.queue.get(message.guild.id);
 		const songInfo = await ytdl.getInfo(args[0].replace(/<(.+)>/g, '$1'));

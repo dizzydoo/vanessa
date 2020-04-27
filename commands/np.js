@@ -5,7 +5,7 @@ module.exports = {
     guildOnly: true,
 	execute(message) {
 		const serverQueue = message.client.queue.get(message.guild.id);
-		if (!serverQueue) return message.channel.send(`There's nothing playing right now.`);
+		if (!serverQueue) return message.channel.send(`There's nothing playing tho. 🤷‍♀️`);
 		return message.channel.send(`🎶 Now playing: **${serverQueue.songs[0].title}**`);
 	}
 };
