@@ -1,6 +1,6 @@
 module.exports = {
 	name: 'leave',
-	description: 'Stops playback, clears queue and makes the bot leave the channel.',
+	description: 'Makes the bot leave the voice channel.',
     guildOnly: true,
 	execute(message) {
 		const { channel } = message.member.voice;
@@ -9,6 +9,7 @@ module.exports = {
 		if (!serverQueue) return message.channel.send('There\'s nothing playing tho.');
 		serverQueue.songs = [];
 		serverQueue.connection.dispatcher.end();
+		serverQueue.voiceChannel.leave();
 		message.channel.send(':wave: cya later, nerd!');
 	}
 };

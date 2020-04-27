@@ -10,7 +10,7 @@ module.exports = {
     guildOnly: true,
 	 async execute(message, args) {
         const { channel } = message.member.voice;
-		if (!channel) return message.channel.send('I\'m sorry but you need to be in a voice channel to play music!');
+		if (!channel) return message.channel.send('You need to be in a voice channel to play music, silly!');
 		const permissions = channel.permissionsFor(message.client.user);
 		if (!permissions.has('CONNECT')) return message.channel.send('I cannot connect to your voice channel, make sure I have the proper permissions!');
 		if (!permissions.has('SPEAK')) return message.channel.send('I cannot speak in this voice channel, make sure I have the proper permissions!');
@@ -43,7 +43,14 @@ module.exports = {
 		const play = async song => {
 			const queue = message.client.queue.get(message.guild.id);
 			if (!song) {
-				queue.voiceChannel.leave();
+				setTimeout(
+					() => {
+						queue.voiceChannel.leave();
+						queue.textChannel.send(`Haven't had anything to play for five minutes 🤷‍♀️ cya later.`)
+					},
+					300 * 1000
+				  );
+				// setTimeout(queue.voiceChannel.leave(), 5000);
 				message.client.queue.delete(message.guild.id);
 				return;
 			}
