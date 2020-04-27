@@ -6,10 +6,11 @@ module.exports = {
 		const { channel } = message.member.voice;
 		if (!channel) return message.channel.send('You need to be in a voice channel to use a command like this :flushed:');
 		const serverQueue = message.client.queue.get(message.guild.id);
-		if (!serverQueue) return message.channel.send('There\'s nothing playing tho.');
-		serverQueue.songs = [];
-		serverQueue.connection.dispatcher.end();
-		serverQueue.voiceChannel.leave();
+		if (serverQueue) {
+			serverQueue.songs = [];
+			serverQueue.connection.dispatcher.end();
+		} 
+		message.member.voice.channel.leave();
 		message.channel.send(':wave: cya later, nerd!');
 	}
 };

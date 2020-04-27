@@ -4,7 +4,14 @@ module.exports = {
     guildOnly: true,
 	execute(message) {
 		if (message.member.voice.channel) try {
-            const connection = message.member.voice.channel.join();
+			const connection = message.member.voice.channel.join();
+			setTimeout(
+				() => {
+					queue.voiceChannel.leave();
+					queue.textChannel.send(`Haven't had anything to play for five minutes 🤷‍♀️ cya later.`)
+				},
+				300 * 1000
+			  );
           } catch (error) {
 			console.error(`I could not join the voice channel: ${error}`);
 			message.client.queue.delete(message.guild.id);
