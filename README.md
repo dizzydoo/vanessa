@@ -9,8 +9,8 @@ Music features WIP using vanilla discord.js commands.
 - dotenv
 
 ## Running (NOT RECOMMENDED)
-- install requirements/dependencies
 - clone/download the repo
+- install dependencies by running **`npm install`** in your local repo folder
 - copy example.env file and set your Bot Token, Bot Prefix and Owner ID in a file named `.env`
 - run using **`node main.js`**
 
