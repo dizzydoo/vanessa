@@ -1,6 +1,6 @@
 {
   "name": "vanessa-musicbot",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Discord.JS powered Discord bot with a cute little wasp.",
   "main": "main.js",
   "dependencies": {
@@ -14,6 +14,6 @@
   "scripts": {
     "start": "node main.js"
   },
-  "author": "",
+  "author": "dizzydoo",
   "license": "ISC"
 }

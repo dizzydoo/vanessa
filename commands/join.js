@@ -7,8 +7,8 @@ module.exports = {
 			const connection = message.member.voice.channel.join();
 			setTimeout(
 				() => {
-					queue.voiceChannel.leave();
-					queue.textChannel.send(`Haven't had anything to play for five minutes 🤷‍♀️ cya later.`)
+					message.member.voice.channel.leave();
+					message.channel.send(`Haven't had anything to play for five minutes 🤷‍♀️ cya later.`)
 				},
 				300 * 1000
 			  );

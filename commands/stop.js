@@ -9,6 +9,6 @@ module.exports = {
 		if (!serverQueue) return message.channel.send('There\'s nothing playing tho.');
 		serverQueue.songs = [];
 		serverQueue.connection.dispatcher.end();
-		message.channel.send(':stop_button: *Queue cleared and song stopped c:*');
+		message.channel.send(':stop_button: Queue cleared and song stopped c:');
 	}
 };
